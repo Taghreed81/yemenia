@@ -88,6 +88,141 @@ input, select, textarea {
   .fc-event .flight-no {
     font-weight: bold;
   }
+
+  .travel-requirements {
+    font-family: "Tahoma", "Arial", "Noto Sans Arabic", sans-serif;
+    background-color: #f9f9f9;
+    padding: 40px 0;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .section-title {
+    text-align: center;
+    color: #0066cc;
+    margin-bottom: 40px;
+    font-size: 28px;
+    position: relative;
+    padding-bottom: 15px;
+  }
+  
+  .section-title:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    width: 100px;
+    height: 3px;
+    background: #0066cc;
+  }
+  
+  .requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .requirement-card {
+    background: white;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    border-top: 4px solid #0066cc;
+  }
+  
+  .requirement-card.highlight {
+    border-top-color: #ff9900;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .requirement-card.highlight:before {
+    content: "مهم";
+    position: absolute;
+    top: 10px;
+    left: -25px;
+    background: #ff9900;
+    color: white;
+    padding: 3px 30px;
+    transform: rotate(-45deg);
+    font-size: 14px;
+  }
+  
+  .requirement-icon {
+    color: #0066cc;
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+  
+  .requirement-card.highlight .requirement-icon {
+    color: #ff9900;
+  }
+  
+  .requirement-card h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #0066cc;
+  }
+  
+  .requirement-card.highlight h3 {
+    color: #ff9900;
+  }
+  
+  .requirement-list {
+    padding-right: 20px;
+    line-height: 1.8;
+  }
+  
+  .requirement-list li {
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  .requirement-list li:before {
+    content: "•";
+    color: #0066cc;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 10px;
+  }
+  
+  .important-note {
+    background: #fff8e6;
+    padding: 15px 20px;
+    border-radius: 5px;
+    border-right: 3px solid #ffcc00;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .important-note i {
+    color: #ff9900;
+    font-size: 24px;
+    margin-left: 15px;
+  }
+  
+  .important-note p {
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 24px;
+    }
+    
+    .requirements-grid {
+      grid-template-columns: 1fr;
+    }
+  }
   
 :root {
     --text-dark-gray: #333333; /* Dark gray color */

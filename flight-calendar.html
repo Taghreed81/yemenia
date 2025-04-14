@@ -1,0 +1,127 @@
+<!-- flight-calendar.html -->
+<link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/locales/ar.min.js'></script>
+
+<div id="flight-calendar" dir="rtl"></div>
+<style>
+  #flight-calendar {
+    max-width: 100%;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  .fc-event {
+    background-color: #0066cc;
+    border: none;
+    padding: 5px;
+    font-size: 0.9rem;
+  }
+  
+  .fc-event .flight-no {
+    font-weight: bold;
+    display: block;
+  }
+  
+  .fc-event .route {
+    display: block;
+    margin: 3px 0;
+  }
+  
+  .fc-event .flight-time {
+    display: block;
+    font-size: 0.8rem;
+  }
+</style>
+
+<script>
+				document.addEventListener('DOMContentLoaded', function() {
+					var calendarEl = document.getElementById('flight-calendar');
+					
+					var calendar = new FullCalendar.Calendar(calendarEl, {
+						locale: 'ar',
+						initialView: 'dayGridMonth',
+						headerToolbar: {
+							right: 'today prev,next',
+							center: 'title',
+							left: 'dayGridMonth,dayGridWeek'
+						},
+						events: [
+							{
+								title: 'IY-642: صنعاء-عمان (10:00-13:00)',
+								start: '2025-04-14',
+								extendedProps: {
+									flightNo: 'IY-642',
+									route: 'صنعاء-عمان',
+									time: '10:00 → 13:00',
+									status: 'CC',
+									aircraft: 'A320 (7O-AFF)',
+									capacity: '12C138Y/12C142Y'
+								}
+							},
+							{
+								title: 'IY-643: عمان-صنعاء (14:00-17:00)',
+								start: '2025-04-14',
+								extendedProps: {
+									flightNo: 'IY-643',
+									route: 'عمان-صنعاء',
+									time: '14:00 → 17:00',
+									status: 'CI',
+									aircraft: 'A320 (7O-AFF)',
+									capacity: '12C138Y/9C128Y'
+								}
+							},
+							{
+								title: 'IY-646: صنعاء-عمان (18:00-21:00)',
+								start: '2025-04-14',
+								extendedProps: {
+									flightNo: 'IY-646',
+									route: 'صنعاء-عمان',
+									time: '18:00 → 21:00',
+									status: 'RZ',
+									aircraft: 'A320 (7O-AFF)',
+									capacity: '12C138Y/12C140Y'
+								}
+							},
+							{
+								title: 'IY-647: عمان-صنعاء (22:00-01:00)',
+								start: '2025-04-14',
+								end: '2025-04-15',
+								extendedProps: {
+									flightNo: 'IY-647',
+									route: 'عمان-صنعاء',
+									time: '22:00 → 01:00',
+									status: 'CI',
+									aircraft: 'A320 (7O-AFF)',
+									capacity: '12C138Y/2C103Y'
+								}
+							},
+							// Add more flights as needed
+						],
+						eventContent: function(arg) {
+							return {
+								html: `<div class="flight-no">${arg.event.extendedProps.flightNo}</div>
+									   <div class="route">${arg.event.extendedProps.route}</div>
+									   <div class="flight-time">${arg.event.extendedProps.time}</div>
+									   <div class="flight-status" style="font-size:0.7rem;margin-top:3px;">حالة: ${arg.event.extendedProps.status}
+										</div>`
+							}
+						},
+						eventDidMount: function(info) {
+							// Color code based on status
+							if(info.event.extendedProps.status === 'CC') {
+								info.el.style.backgroundColor = '#4CAF50'; // Green for CC
+							} else if(info.event.extendedProps.status === 'CI') {
+								info.el.style.backgroundColor = '#FF9800'; // Orange for CI
+							} else if(info.event.extendedProps.status === 'RZ') {
+								info.el.style.backgroundColor = '#F44336'; // Red for RZ
+							}
+						}
+					});
+					
+					calendar.render();
+				});
+			</script>

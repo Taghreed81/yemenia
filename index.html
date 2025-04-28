@@ -53,9 +53,9 @@
 									<div class="content">
 										<h2 class="major">أوقات العمل</h2>
 											<p>
+												<strong>السبت:</strong> 10:00 صباحاً - 1:00 ظهراً
 												<strong>من الأحد إلى الخميس:</strong> 9:00 صباحاً - 3:00 مساءً<br>
 												<strong>الجمعة:</strong> عطلة<br>
-												<strong>السبت:</strong> 10:00 صباحاً - 1:00 ظهراً
 											</p>
 									</div>
 								</div>
@@ -131,7 +131,8 @@
 										<li>أو تقرير طبي معتمد</li>
 										<li>تذكرة سفر ذهاب وعودة</li>
 									  </ul>
-									</div>
+									</div>	 
+								
 									
 									<div class="requirement-card highlight">
 									  <div class="requirement-icon">
@@ -232,18 +233,11 @@
 				document.addEventListener('DOMContentLoaded', function() {
 					var calendarEl = document.getElementById('flight-calendar');
 					
-					var calendar = new FullCalendar.Calendar(calendarEl, {
-						locale: 'ar',
-						initialView: 'dayGridMonth',
-						headerToolbar: {
-							right: 'today prev,next',
-							center: 'title',
-							left: 'dayGridMonth,dayGridWeek'
-						},
-						events: [
-							{
+					
+					var events = [
+					{
 								title: 'IY-642: صنعاء-عمان (10:00-13:00)',
-								start: '2025-04-14',
+								start: '2025-04-28',
 								extendedProps: {
 									flightNo: 'IY-642',
 									route: 'صنعاء-عمان',
@@ -253,48 +247,7 @@
 							},
 							{
 								title: 'IY-643: عمان-صنعاء (14:00-17:00)',
-								start: '2025-04-14',
-								extendedProps: {
-									flightNo: 'IY-643',
-									route: 'عمان-صنعاء',
-									time: '14:00 → 17:00',
-								
-								}
-							},
-							{
-								title: 'IY-646: صنعاء-عمان (18:00-21:00)',
-								start: '2025-04-14',
-								extendedProps: {
-									flightNo: 'IY-646',
-									route: 'صنعاء-عمان',
-									time: '18:00 → 21:00',
-							
-								}
-							},
-							{
-								title: 'IY-647: عمان-صنعاء (22:00-01:00)',
-								start: '2025-04-14',
-								end: '2025-04-15',
-								extendedProps: {
-									flightNo: 'IY-647',
-									route: 'عمان-صنعاء',
-									time: '22:00 → 01:00',
-								
-								}
-							},
-							{
-								title: 'IY-642: صنعاء-عمان (10:00-13:00)',
-								start: '2025-04-15',
-								extendedProps: {
-									flightNo: 'IY-642',
-									route: 'صنعاء-عمان',
-									time: '10:00 → 13:00',
-								
-								}
-							},
-							{
-								title: 'IY-643: عمان-صنعاء (14:00-17:00)',
-								start: '2025-04-15',
+								start: '2025-04-28',
 								extendedProps: {
 									flightNo: 'IY-643',
 									route: 'عمان-صنعاء',
@@ -304,17 +257,17 @@
 							},
 							{
 								title: 'IY-646: صنعاء-عمان (16:00-19:00)',
-								start: '2025-04-15',
+								start: '2025-04-28',
 								extendedProps: {
-									flightNo: 'IY-642',
+									flightNo: 'IY-646',
 									route: 'صنعاء-عمان',
 									time: '16:00 → 19:00',
-								
+							
 								}
 							},
 							{
-								title: 'IY-643: عمان-صنعاء (20:00-23:00)',
-								start: '2025-04-15',
+								title: 'IY-647: عمان-صنعاء (20:00-23:00)',
+								start: '2025-04-28',
 								extendedProps: {
 									flightNo: 'IY-647',
 									route: 'عمان-صنعاء',
@@ -322,10 +275,29 @@
 								
 								}
 							},
-							 // New flights (April 16)
+							{
+								title: 'IY-646: صنعاء-عمان (16:00-19:00)',
+								start: '2025-04-29',
+								extendedProps: {
+									flightNo: 'IY-646',
+									route: 'صنعاء-عمان',
+									time: '16:00 → 19:00',
+							
+								}
+							},
+							{
+								title: 'IY-647: عمان-صنعاء (20:00-23:00)',
+								start: '2025-04-29',
+								extendedProps: {
+									flightNo: 'IY-647',
+									route: 'عمان-صنعاء',
+									time: '20:00 → 23:00',
+								
+								}
+							},
 							{
 								title: 'IY-642: صنعاء - عمان (08:00-11:00)',
-								start: '2025-04-16',
+								start: '2025-04-30',
 								extendedProps: {
 								flightNo: 'IY-642',
 								route: 'صنعاء-عمان',
@@ -334,7 +306,7 @@
 							},
 							{
 								title: 'IY-643: عمان-صنعاء (12:00-15:00)',
-								start: '2025-04-16',
+								start: '2025-04-30',
 								extendedProps: {
 								flightNo: 'IY-643',
 								route: 'عمان-صنعاء',
@@ -343,7 +315,7 @@
 							},
 							{
 								title: 'IY-648: عدن-عمان (16:30-20:00)',
-								start: '2025-04-16',
+								start: '2025-04-30',
 								extendedProps: {
 								flightNo: 'IY-648',
 								route: 'عدن-عمان',
@@ -352,7 +324,7 @@
 							},
 							{
 								title: 'IY-646: صنعاء-عمان (20:30-23:30)',
-								start: '2025-04-16',
+								start: '2025-04-30',
 								extendedProps: {
 								flightNo: 'IY-646',
 								route: 'صنعاء-عمان',
@@ -361,8 +333,8 @@
 							},
 							{
 								title: 'IY-649: عمان-عدن (21:00-00:30)',
-								start: '2025-04-16',
-								end: '2025-04-17',
+								start: '2025-04-30',
+								end: '2025-05-01',
 								extendedProps: {
 								flightNo: 'IY-649',
 								route: 'عمان-عدن',
@@ -371,29 +343,125 @@
 							},
 							{
 								title: 'IY-647: عمان-صنعاء (23:59-03:30)',
-								start: '2025-04-16',
-								end: '2025-04-17',
+								start: '2025-04-30',
+								end: '2025-05-01',
 								extendedProps: {
 								flightNo: 'IY-647',
 								route: 'عمان-صنعاء',
 								time: '23:59 → 03:30'
 								}
-							}
+							},
+							 // New flights (April 16)
+							 {
+								title: 'IY-642: صنعاء - عمان (10:00-13:00)',
+								start: '2025-05-01',
+								extendedProps: {
+									flightNo: 'IY-642',
+									route: 'صنعاء-عمان',
+									time: '10:00 → 13:00'
+								}
+								},
+								{
+								title: 'IY-643: عمان-صنعاء (14:00-17:00)',
+								start: '2025-05-01',
+								extendedProps: {
+									flightNo: 'IY-643',
+									route: 'عمان-صنعاء',
+									time: '14:00 → 17:00'
+								}
+								},
+								{
+								title: 'IY-646: صنعاء-عمان (16:00-19:00)',
+								start: '2025-05-01',
+								extendedProps: {
+									flightNo: 'IY-646',
+									route: 'صنعاء-عمان',
+									time: '16:00 → 19:00'
+								}
+								},
+								{
+								title: 'IY-647: عمان-صنعاء (20:00-23:00)',
+								start: '2025-05-01',
+								extendedProps: {
+									flightNo: 'IY-647',
+									route: 'عمان-صنعاء',
+									time: '20:00 → 23:00'
+								}
+								},
+								// May 2 flights - Sorted by departure time (earliest first)
+								{
+								title: 'IY-642: صنعاء - عمان (08:00-11:00)',
+								start: '2025-05-02',
+								extendedProps: {
+									flightNo: 'IY-642',
+									route: 'صنعاء-عمان',
+									time: '08:00 → 11:00'
+								}
+								},
+								{
+								title: 'IY-643: عمان-صنعاء (12:00-15:00)',
+								start: '2025-05-02',
+								extendedProps: {
+									flightNo: 'IY-643',
+									route: 'عمان-صنعاء',
+									time: '12:00 → 15:00'
+								}
+								},
+								{
+								title: 'IY-640: عدن-عمان (16:30-20:00)',
+								start: '2025-05-02',
+								extendedProps: {
+									flightNo: 'IY-640',
+									route: 'عدن-عمان',
+									time: '16:30 → 20:00'
+								}
+								},
+								{
+								title: 'IY-641: عمان-عدن (21:00-00:30)',
+								start: '2025-05-02',
+								end: '2025-05-03',
+								extendedProps: {
+									flightNo: 'IY-641',
+									route: 'عمان-عدن',
+									time: '21:00 → 00:30'
+								}
+								}
+								
+							
+								
 							// Add more flights as needed
-						],
-						eventContent: function(arg) {
-							return {
-								html: `<div class="flight-no">${arg.event.extendedProps.flightNo}</div>
-									   <div class="route">${arg.event.extendedProps.route}</div>
-									   <div class="flight-time">${arg.event.extendedProps.time}</div>
-									   `
-							}
-						},
+						];
 						
-					});
-					
-					calendar.render();
-				});
+						events.sort((a, b) => {
+							const getHour = (timeStr) => {
+								const timePart = timeStr.split('→')[0].trim(); // Gets "10:00" from "10:00 → 13:00"
+								return parseInt(timePart.split(':')[0]); // Extracts the hour (10)
+							};
+							return getHour(a.extendedProps.time) - getHour(b.extendedProps.time);
+							});
+
+							var calendar = new FullCalendar.Calendar(calendarEl, {
+							locale: 'ar',
+							initialView: 'dayGridMonth',
+							headerToolbar: {
+								right: 'today prev,next',
+								center: 'title',
+								left: 'dayGridMonth,dayGridWeek'
+							},
+							events: events, // Use the sorted events array
+							eventOrder: 'time', // Additional sorting guarantee
+							eventContent: function(arg) {
+								return {
+								html: `<div class="flight-no">${arg.event.extendedProps.flightNo}</div>
+										<div class="route">${arg.event.extendedProps.route}</div>
+										<div class="flight-time">${arg.event.extendedProps.time}</div>`
+								}
+							}
+							});
+							
+							calendar.render();
+						});
+
 			</script>
 
 <footer class="site-footer" dir="rtl">

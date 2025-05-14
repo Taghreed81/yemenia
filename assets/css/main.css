@@ -71,6 +71,23 @@ input, select, textarea {
 	-ms-appearance: none;
 	appearance: none;
 }
+
+.important-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px; /* spacing between icon and content */
+}
+
+.important-note i {
+  margin-top: 5px; /* aligns the icon with the top */
+}
+
+.important-note div {
+  display: flex;
+  flex-direction: column;
+}
+
+
 /* Responsive adjustments for calendar events */
 .fc-event {
 	white-space: normal !important;
